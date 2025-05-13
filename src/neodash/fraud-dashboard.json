@@ -1,0 +1,286 @@
+{
+  "title": "Fraud Demo Dashboard",
+  "version": "2.4",
+  "settings": {
+    "pagenumber": 2,
+    "editable": true,
+    "fullscreenEnabled": false,
+    "parameters": {
+      "neodash_customer": "Christiansen Rippin",
+      "neodash_account": "1614533973",
+      "neodash_shareditem": "4:80f1fa55-bce3-47f7-b705-90cdaf396483:356",
+      "neodash_hrj": "0458319962"
+    },
+    "theme": "light"
+  },
+  "pages": [
+    {
+      "title": "Transaction Rings",
+      "reports": [
+        {
+          "id": "7028664a-a7a8-495f-8fb2-296d6049ad4e",
+          "title": "Rings",
+          "query": "MATCH (a:Account)-[f:SENT]->(first_tx:Transaction)\nMATCH path=(a)-[f]->(first_tx)\n\t(\n\t(tx_i:Transaction)-[:RECEIVED]->(a_i:Account)-[:SENT]->(tx_j:Transaction)\n     WHERE tx_i.date < tx_j.date\n     AND tx_i.amount >= tx_j.amount >= 0.80 * tx_i.amount\n  \t){2,15}\n  (last_tx:Transaction)-[:RECEIVED]->(a)\nWHERE COUNT {WITH a, a_i UNWIND [a] + a_i AS b RETURN DISTINCT b} =\n\tsize([a] + a_i)\nRETURN COUNT {WITH a, a_i UNWIND [a] + a_i AS b RETURN DISTINCT b} as ringSize, a.accountNumber as EntryAccount",
+          "width": 12,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "EntryAccount",
+                "value": "EntryAccount",
+                "customization": "set variable",
+                "customizationValue": "account"
+              }
+            ],
+            "ignoreNonDefinedParams": true
+          },
+          "schema": []
+        },
+        {
+          "id": "1fb9c303-5ff3-4543-8008-c36d1a96010d",
+          "title": "Transaction Ring",
+          "query": "MATCH (a:Account {accountNumber: $neodash_account})-[f:SENT]->(first_tx:Transaction)\nMATCH path=(a)-[f]->(first_tx)\n\t(\n\t(tx_i:Transaction)-[:RECEIVED]->(a_i:Account)-[:SENT]->(tx_j:Transaction)\n     WHERE tx_i.date < tx_j.date\n     AND tx_i.amount >= tx_j.amount >= 0.80 * tx_i.amount\n  \t){2,15}\n  (last_tx:Transaction)-[:RECEIVED]->(a)\nWHERE COUNT {WITH a, a_i UNWIND [a] + a_i AS b RETURN DISTINCT b} =\n\tsize([a] + a_i)\nRETURN path\n\n",
+          "width": 12,
+          "height": 6,
+          "x": 0,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "Account": "accountNumber",
+            "Internal": "accountNumber",
+            "Transaction": "amount"
+          },
+          "settings": {
+            "nodeColorScheme": "dark2",
+            "frozen": false,
+            "nodePositions": {}
+          },
+          "schema": [
+            [
+              "Account",
+              "accountID",
+              "balance",
+              "louvainCommunity",
+              "accountType",
+              "pagerank",
+              "accountNumber",
+              "status"
+            ],
+            [
+              "Internal",
+              "accountID",
+              "balance",
+              "louvainCommunity",
+              "accountType",
+              "pagerank",
+              "accountNumber",
+              "status"
+            ],
+            [
+              "Transaction",
+              "date",
+              "amount",
+              "type",
+              "transactionID",
+              "status"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Shared Identifiers",
+      "reports": [
+        {
+          "id": "56677d4e-8108-4f72-81e6-13425f631cb5",
+          "title": "",
+          "query": "MATCH (c1:Customer)-[r1:USES_PHONE|USES_EMAIL|RESIDES_AT]->(item:PhoneNumber|Email|Address)<-[r2:USES_PHONE|USES_EMAIL|RESIDES_AT]-(c2:Customer)\nWHERE elementId(c1) < elementId(c2)\nWITH item, count(distinct [c1, c2]) AS nbSharedIdentifierRelationships\nRETURN elementId(item) AS itemId, case labels(item)[0]\nwhen \"Address\" then item.street \nwhen \"PhoneNumber\" then item.number\nwhen \"Email\" then item.emailAddress\nelse \"u\" end as identity, labels(item)[0] AS itemType, nbSharedIdentifierRelationships\nORDER BY nbSharedIdentifierRelationships DESC LIMIT 10\n\n\n",
+          "width": 15,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "itemId",
+                "value": "itemId",
+                "customization": "set variable",
+                "customizationValue": "shareditem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "a266b4b5-ee62-4e4d-b44c-78f0ffce10af",
+          "title": "",
+          "query": "match (i)<-[r2:USES_PHONE|USES_EMAIL|RESIDES_AT]-(c2:Customer) \nwhere elementId(i) = $neodash_shareditem\nreturn i, r2, c2\n\n\n",
+          "width": 15,
+          "height": 5,
+          "x": 0,
+          "y": 5,
+          "type": "graph",
+          "selection": {
+            "Email": "(label)",
+            "USES_EMAIL": "(label)",
+            "Customer": "name"
+          },
+          "settings": {
+            "ignoreNonDefinedParams": true
+          },
+          "schema": [
+            [
+              "Email",
+              "emailAddress",
+              "emailID"
+            ],
+            [
+              "USES_EMAIL"
+            ],
+            [
+              "Customer",
+              "fraudFlag",
+              "louvainCommunity",
+              "customerID",
+              "name",
+              "dateOfBirth",
+              "betweenness",
+              "pagerank"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "High Risk Jurisdictions",
+      "reports": [
+        {
+          "id": "ce8cb94d-d8d2-490f-9c53-82645f0f4625",
+          "title": "High Risk Accounts",
+          "query": "MATCH (l:Account)-[:SENT]->(last_t:Transaction)-[:RECEIVED]->(hrj:HighRiskJurisdiction)\nWHERE last_t.date >= datetime()-duration({days: 270})\nWITH l, hrj, SUM(last_t.amount) AS total_hrj_transctions\nMATCH path=(first)((a1)-[:SENT]->(t)-[:RECEIVED]->(a2)\nWHERE COLLECT {\n       WITH a1, a2\n       MATCH (a1)-[:SENT]->(some_t)-[:RECEIVED]->(a2)\n       WHERE some_t.date >= datetime()-duration({days: 270})\n       WITH SUM(some_t.amount) AS s\n       RETURN 0.9 * total_hrj_transctions <= s <= 1.1 * total_hrj_transctions\n   } = [TRUE]\n)*(l)-[:SENT]->(tx:Transaction)-[:RECEIVED]->(hrj)\n   WHERE NOT EXISTS {\n       WITH first\n       MATCH (before)-[:SENT]->(tx)-[:RECEIVED]->(first)\n       WHERE tx.date >= datetime()-duration({days: 270})\n       WITH SUM(tx.amount) AS sx, before\n       WHERE 0.9 * total_hrj_transctions <= sx <= 1.1 * total_hrj_transctions\n       RETURN before\n   } AND\n   tx.date >= datetime()-duration({days: 270})\nRETURN distinct hrj.accountNumber as accountNumber",
+          "width": 8,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "accountNumber",
+                "value": "accountNumber",
+                "customization": "set variable",
+                "customizationValue": "hrj"
+              }
+            ]
+          },
+          "schema": []
+        },
+        {
+          "id": "b6816e6b-1c6b-45c1-b56d-f89f10a52b6d",
+          "title": "",
+          "query": "MATCH (l:Account)-[:SENT]->(last_t:Transaction)-[:RECEIVED]->(hrj:HighRiskJurisdiction {accountNumber: $neodash_hrj})\nWHERE last_t.date >= datetime()-duration({days: 270})\nWITH l, hrj, SUM(last_t.amount) AS total_hrj_transctions\nMATCH path=(first)((a1)-[:SENT]->(t)-[:RECEIVED]->(a2)\nWHERE COLLECT {\n       WITH a1, a2\n       MATCH (a1)-[:SENT]->(some_t)-[:RECEIVED]->(a2)\n       WHERE some_t.date >= datetime()-duration({days: 270})\n       WITH SUM(some_t.amount) AS s\n       RETURN 0.9 * total_hrj_transctions <= s <= 1.1 * total_hrj_transctions\n   } = [TRUE]\n)*(l)-[:SENT]->(tx:Transaction)-[:RECEIVED]->(hrj)\n   WHERE NOT EXISTS {\n       WITH first\n       MATCH (before)-[:SENT]->(tx)-[:RECEIVED]->(first)\n       WHERE tx.date >= datetime()-duration({days: 270})\n       WITH SUM(tx.amount) AS sx, before\n       WHERE 0.9 * total_hrj_transctions <= sx <= 1.1 * total_hrj_transctions\n       RETURN before\n   } AND\n   tx.date >= datetime()-duration({days: 270})\nRETURN path\n\n\n",
+          "width": 15,
+          "height": 9,
+          "x": 0,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "Account": "accountNumber",
+            "Internal": "accountNumber",
+            "Transaction": "amount",
+            "HighRiskJurisdiction": "(label)",
+            "External": "(label)"
+          },
+          "settings": {
+            "ignoreNonDefinedParams": true
+          },
+          "schema": [
+            [
+              "Account",
+              "accountID",
+              "balance",
+              "louvainCommunity",
+              "accountType",
+              "pagerank",
+              "accountNumber",
+              "status"
+            ],
+            [
+              "Internal",
+              "accountID",
+              "balance",
+              "louvainCommunity",
+              "accountType",
+              "pagerank",
+              "accountNumber",
+              "status"
+            ],
+            [
+              "Transaction",
+              "date",
+              "amount",
+              "type",
+              "transactionID",
+              "status"
+            ],
+            [
+              "HighRiskJurisdiction",
+              "accountID",
+              "balance",
+              "louvainCommunity",
+              "accountType",
+              "pagerank",
+              "accountNumber",
+              "status"
+            ],
+            [
+              "External",
+              "accountID",
+              "balance",
+              "louvainCommunity",
+              "accountType",
+              "pagerank",
+              "accountNumber",
+              "status"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {},
+  "extensions": {
+    "active": true,
+    "activeReducers": [
+      "DASHBOARD/EXTENSIONS/QUERY_TRANSLATOR/"
+    ],
+    "advanced-charts": {
+      "active": true
+    },
+    "styling": {
+      "active": true
+    },
+    "actions": {
+      "active": true
+    },
+    "query-translator": {
+      "active": true
+    },
+    "forms": {
+      "active": true
+    },
+    "access-control-management": {
+      "active": true
+    }
+  },
+  "uuid": "f0a6b78a-a383-48e0-848c-31e43c3c8288"
+}
