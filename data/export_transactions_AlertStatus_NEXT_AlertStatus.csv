@@ -1,0 +1,9 @@
+start_AlertStatus_alertId,end_AlertStatus_alertId
+01,02
+01,05
+02,03
+02,04
+04,02
+04,05
+05,04
+05,06

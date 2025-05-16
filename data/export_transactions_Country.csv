@@ -1,0 +1,9 @@
+label_sp,is_ilomember,iso3_code,geo_point_2d_lat,onu_code,geo_point_2d_lon,iso2_code,is_receiving_quest,label_en,official_lang_code,countryId,label_fr,blackList,greyList
+Reino Unido,Y,GBR,54.1454903122,826,-2.88594273633,GB,Y,United Kingdom,EN,GBR,Royaume-Uni,,
+Brasil,Y,BRA,-10.7811447641,076,-53.0925364784,BR,Y,Brazil,SP,BRA,Brésil,,
+"Corea, Rep. Pop. Dem. de",N,PRK,40.1508079459,408,127.184350323,KP,Y,"Korea, Dem. People's Rep. of",EN,PRK,"Corée, Rép. pop. dém. de",true,
+Singapur,Y,SGP,1.35861228265,702,103.812245192,SG,Y,Singapore,EN,SGP,Singapour,,
+Malí,Y,MLI,17.3446450476,466,-3.5394321557,ML,Y,Mali,FR,MLI,Mali,,true
+Estados Unidos,Y,USA,45.6875333395,840,-112.494333916,US,Y,United States,EN,USA,Etats-Unis,,
+Nigeria,Y,NGA,9.59507580848,566,8.09141781395,NG,Y,Nigeria,EN,NGA,Nigéria,,true
+Myanmar,Y,MMR,21.1683805571,104,96.4892839365,MM,Y,Myanmar,EN,MMR,Myanmar,true,

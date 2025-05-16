@@ -1,0 +1,47 @@
+country,city,street,state,addressID
+USA,Rosebank,997 Beacon Street,New York,aa5aac22-d9be-441b-ad3e-b1c9e1bf1252
+SGP,Singapore,528 River Valley Road,Singapore,f11694b8-a446-4034-a989-b5528a080ec4
+MLI,Ansongo,456 Rue Mohamed V,Gao,f6d31b5f-c374-4050-83f0-b44885c7d8e7
+SGP,Singapore,206 Serangoon Road,Singapore,51289539-c9c3-441b-93e8-076b72b70758
+PRK,T’ongch’ŏn-ŭp,440 Changjon Street,Kangwon,1c07f3e5-2b95-4228-bbf0-41af88c17259
+MLI,Gao,332 Avenue de la Libération,Gao,99771244-c9b3-496b-bd04-b7bb0f5d6af1
+PRK,Changgang-gun,347 Sosan Street,Chagang,479da85e-2c86-4ada-a9bb-d3dd3cc5e385
+SGP,Singapore,212 Westerhout Road,Singapore,fe983c6d-5047-4656-9d0c-83f1d60f7e05
+GBR,London,338 Downing Street,London,3a0d1427-d11e-451d-a68f-be53d1e76086
+SGP,Singapore,481 Holland Road,Singapore,92eccede-8b02-4b2c-921a-c99736663973
+GBR,Chelsea,125 Regent Street,London,65805050-acf0-4747-8264-8ffbed5d1f2d
+SGP,Singapore,457 Bukit Timah Road,Singapore,af922124-de0a-4f3e-8223-7d0f9f5ce170
+MMR,Myanaung,600 Min Ye Kyaw Swar Street,Ayeyarwady,dbc24e03-16c2-4096-be1f-768884aafe23
+USA,Great River,959 Broadway,New York,77204d13-7809-4e14-9379-c8f8dabab1c4
+BRA,São Francisco,138 Rua Oscar Freire,São Paulo,4c6853eb-5cd9-4c41-9dbd-f08f705c47d4
+MLI,Cercle de Bourem,144 Rue Kati,Gao,7e727bfb-13c4-422d-808a-0be10f633b44
+SGP,Singapore,904 Cecil Street,Singapore,00808a73-385c-45fb-bd5e-b0599a657732
+USA,Rosebank,822 Wall Street,New York,d28136cf-c1fc-4ac8-a033-4f9ddc59480c
+GBR,Southwark,262 Abbey Road,London,915b7fdb-f754-45d5-9cbc-03f97b7e9bf3
+USA,Fayetteville,410 Michigan Avenue,New York,5029cee3-b7b6-4130-b709-9f32cc216022
+SGP,Singapore,916 Geylang Road,Singapore,17741720-cc1f-482e-82fb-64ccecadba8e
+MMR,Nyaungdon,341 Shwedagon Pagoda Road,Ayeyarwady,d3b479a4-9b01-4aa9-afa9-ad0d7778e664
+SGP,Singapore,720 Orange Grove Street,Singapore,942c08e9-a053-4ff3-b5fe-9b10664af889
+MMR,Bago,159 U Wisara Road,Bago,332c14cc-4ace-4251-be51-3ae372e007a6
+USA,New York,190 Fifth Avenue,New York,7b3997f9-ec29-4dd1-b54c-a1fb21bc2a64
+USA,Yates County,292 Peachtree Street,New York,b4c5010b-f4d6-4294-8948-9a501df50fb1
+MMR,Pyapon,118 Bagan-Nyaung U Road,Ayeyarwady,f07f620f-9548-4278-874f-2892c396bd42
+USA,Queens County,540 Madison Avenue,New York,e29bbc40-1958-4dfd-b53b-0fdf9204b780
+SGP,Singapore,327 Changi Road,Singapore,8d579abd-e365-4d2a-9cfd-278a945f0d5f
+BRA,Descalvado,224 Avenida Paulista,São Paulo,82fcc3f3-ca29-4c10-b32d-16816002ec4d
+MLI,Cercle de Bourem,699 Avenue Modibo Keïta,Gao,046cc1fc-c693-4c7e-920a-6c84e682d1c7
+NGA,Madala,107 Awolowo Road,Abuja Federal Capital Territory,789690c6-89df-46e1-8100-95a5397c0527
+GBR,Islington,150 Whitehall,London,ce308fe2-03f1-431a-93a0-573f3ed628d7
+MLI,Gao Cercle,631 Rue de Koulikoro,Gao,96f64b4c-10db-4285-9d30-ae8b0050db08
+GBR,Hackney,741 The Strand,London,aed43c1c-9afc-484f-ac84-c9bff1b7d2fe
+MLI,Cercle de Bourem,751 Avenue Al Qods,Gao,2d3b4f0c-7e78-4ff3-a261-0530e975f77d
+NGA,Zuba,248 Ahmadu Bello Way,Abuja Federal Capital Territory,35470953-ba04-49c4-9cc9-4396a0c4cd8f
+USA,Great River,214 Rodeo Drive,New York,6a1a7d00-7b93-4d7c-9102-a5454ecf7f36
+USA,Great River,534 Market Street,New York,bb878e31-20ae-4fee-be8d-e7b281a28177
+PRK,Chasŏng,629 Taedongmun Street,Kangwon,a0c1c550-b969-49c7-964f-45b68a8ce204
+NGA,Kuje,582 Isa Kaita Road,Abuja Federal Capital Territory,734320ea-c4a8-4d08-b61c-08368c06c90c
+SGP,Singapore,673 Tampines Avenue,Singapore,852deef8-cc0d-4394-93be-c4199de2445f
+USA,Wawarsing,522 Fifth Avenue,New York,63bf8b7b-b14a-4acd-8dd3-42103e06fca1
+PRK,Changgang-gun,939 Reunification Street,Chagang,68c9b7f0-08a1-4609-a058-f81379217225
+BRA,São Paulo,683 Rua Olimpíadas,São Paulo,b7eb5552-5936-4ceb-9237-ba2fe61a1c6f
+GBR,Chelsea,386 Pall Mall,London,e821c962-9273-4667-8759-e5ffc5f4bb1c

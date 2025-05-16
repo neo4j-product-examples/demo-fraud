@@ -1,0 +1,2863 @@
+{
+  "version": "2.3.1-beta.0",
+  "visualisation": {
+    "nodes": [
+      {
+        "id": "n:1",
+        "position": {
+          "x": 570,
+          "y": 310
+        }
+      },
+      {
+        "id": "n:2",
+        "position": {
+          "x": 570,
+          "y": 550
+        }
+      },
+      {
+        "id": "n:3",
+        "position": {
+          "x": 597.0769237487423,
+          "y": -40.905977718046074
+        }
+      },
+      {
+        "id": "n:4",
+        "position": {
+          "x": 857.0769237487423,
+          "y": -40.905977718046074
+        }
+      },
+      {
+        "id": "n:5",
+        "position": {
+          "x": 1090,
+          "y": 550
+        }
+      },
+      {
+        "id": "n:6",
+        "position": {
+          "x": 310,
+          "y": 550
+        }
+      },
+      {
+        "id": "n:7",
+        "position": {
+          "x": 570,
+          "y": 950
+        }
+      },
+      {
+        "id": "n:11",
+        "position": {
+          "x": 830,
+          "y": 550
+        }
+      },
+      {
+        "id": "n:12",
+        "position": {
+          "x": 570,
+          "y": 750
+        }
+      },
+      {
+        "id": "n:13",
+        "position": {
+          "x": 337.0769237487422,
+          "y": -40.905977718046074
+        }
+      },
+      {
+        "id": "n:14",
+        "position": {
+          "x": 830,
+          "y": 310
+        }
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "2.3.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:1",
+            "token": "Account",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "accountID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              },
+              {
+                "$id": "p:2",
+                "token": "accountNumber",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:3",
+                "token": "accountType",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:4",
+                "token": "balance",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:5",
+                "token": "louvainCommunity",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:6",
+                "token": "pagerank",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:7",
+                "token": "status",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:40",
+                "token": "internalExternal",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:41",
+                "token": "highRiskJurisdiction",
+                "type": {
+                  "type": "boolean"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:2",
+            "token": "Address",
+            "properties": [
+              {
+                "$id": "p:8",
+                "token": "addressID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              },
+              {
+                "$id": "p:9",
+                "token": "city",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": true
+              },
+              {
+                "$id": "p:10",
+                "token": "country",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:11",
+                "token": "state",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": true
+              },
+              {
+                "$id": "p:12",
+                "token": "street",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:3",
+            "token": "Alert",
+            "properties": [
+              {
+                "$id": "p:13",
+                "token": "alertId",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:4",
+            "token": "AlertStatus",
+            "properties": [
+              {
+                "$id": "p:14",
+                "token": "alertId",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:15",
+                "token": "status",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:5",
+            "token": "Country",
+            "properties": [
+              {
+                "$id": "p:16",
+                "token": "blackList",
+                "type": {
+                  "type": "boolean"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:17",
+                "token": "countryId",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              },
+              {
+                "$id": "p:18",
+                "token": "geo_point_2d_lat",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:19",
+                "token": "geo_point_2d_lon",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:20",
+                "token": "greyList",
+                "type": {
+                  "type": "boolean"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:21",
+                "token": "is_ilomember",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:22",
+                "token": "is_receiving_quest",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:23",
+                "token": "iso2_code",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:24",
+                "token": "iso3_code",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:25",
+                "token": "label_en",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:26",
+                "token": "label_fr",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:27",
+                "token": "label_sp",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:28",
+                "token": "official_lang_code",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:29",
+                "token": "onu_code",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:6",
+            "token": "Customer",
+            "properties": [
+              {
+                "$id": "p:30",
+                "token": "betweenness",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:31",
+                "token": "customerID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              },
+              {
+                "$id": "p:32",
+                "token": "dateOfBirth",
+                "type": {
+                  "type": "datetime"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:33",
+                "token": "fraudFlag",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:34",
+                "token": "louvainCommunity",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:35",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:36",
+                "token": "pagerank",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:7",
+            "token": "Email",
+            "properties": [
+              {
+                "$id": "p:37",
+                "token": "emailAddress",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:38",
+                "token": "emailID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:11",
+            "token": "Jurisdiction",
+            "properties": [
+              {
+                "$id": "p:60",
+                "token": "jurisdictionID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              },
+              {
+                "$id": "p:61",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:62",
+                "token": "riskLevel",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:12",
+            "token": "PhoneNumber",
+            "properties": [
+              {
+                "$id": "p:63",
+                "token": "number",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:64",
+                "token": "phoneNumberID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:13",
+            "token": "Scenario",
+            "properties": [
+              {
+                "$id": "p:65",
+                "token": "alertDetailQuery",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:66",
+                "token": "applicationDate",
+                "type": {
+                  "type": "datetime"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:67",
+                "token": "creationDate",
+                "type": {
+                  "type": "datetime"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:68",
+                "token": "frequency",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:69",
+                "token": "listAlertsQuery",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:70",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:14",
+            "token": "Transaction",
+            "properties": [
+              {
+                "$id": "p:71",
+                "token": "amount",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:72",
+                "token": "date",
+                "type": {
+                  "type": "datetime"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:73",
+                "token": "status",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:74",
+                "token": "transactionID",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": true,
+                "uniqueConstraint": true
+              },
+              {
+                "$id": "p:75",
+                "token": "type",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:1",
+            "token": "ASSOCIATED_WITH",
+            "properties": []
+          },
+          {
+            "$id": "rt:2",
+            "token": "HAS_ACCOUNT",
+            "properties": []
+          },
+          {
+            "$id": "rt:3",
+            "token": "HAS_ALERT",
+            "properties": []
+          },
+          {
+            "$id": "rt:4",
+            "token": "HAS_PREVIOUS_STATUS",
+            "properties": [
+              {
+                "$id": "p:76",
+                "token": "creationDate",
+                "type": {
+                  "type": "datetime"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "rt:5",
+            "token": "HAS_STATUS",
+            "properties": []
+          },
+          {
+            "$id": "rt:6",
+            "token": "LOCATED_IN",
+            "properties": []
+          },
+          {
+            "$id": "rt:7",
+            "token": "NEXT",
+            "properties": []
+          },
+          {
+            "$id": "rt:8",
+            "token": "NEXT_ANALYST",
+            "properties": []
+          },
+          {
+            "$id": "rt:9",
+            "token": "NEXT_SUPERVISOR",
+            "properties": []
+          },
+          {
+            "$id": "rt:10",
+            "token": "RECEIVED",
+            "properties": []
+          },
+          {
+            "$id": "rt:11",
+            "token": "RESIDES_AT",
+            "properties": []
+          },
+          {
+            "$id": "rt:12",
+            "token": "SENT",
+            "properties": []
+          },
+          {
+            "$id": "rt:13",
+            "token": "SHARED_IDENTIFIERS",
+            "properties": [
+              {
+                "$id": "p:77",
+                "token": "sharedCount",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:78",
+                "token": "sharedRatio",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "rt:14",
+            "token": "TRANSACTED_TO",
+            "properties": [
+              {
+                "$id": "p:79",
+                "token": "averageAmount",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:80",
+                "token": "maxAmount",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:81",
+                "token": "minAmount",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:82",
+                "token": "totalAmount",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              },
+              {
+                "$id": "p:83",
+                "token": "transactionCount",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true,
+                "nodeKey": false,
+                "uniqueConstraint": false
+              }
+            ]
+          },
+          {
+            "$id": "rt:15",
+            "token": "USES_EMAIL",
+            "properties": []
+          },
+          {
+            "$id": "rt:16",
+            "token": "USES_PHONE",
+            "properties": []
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:1",
+            "labels": [
+              {
+                "$ref": "#nl:1"
+              }
+            ]
+          },
+          {
+            "$id": "n:2",
+            "labels": [
+              {
+                "$ref": "#nl:2"
+              }
+            ]
+          },
+          {
+            "$id": "n:3",
+            "labels": [
+              {
+                "$ref": "#nl:3"
+              }
+            ]
+          },
+          {
+            "$id": "n:4",
+            "labels": [
+              {
+                "$ref": "#nl:4"
+              }
+            ]
+          },
+          {
+            "$id": "n:5",
+            "labels": [
+              {
+                "$ref": "#nl:5"
+              }
+            ]
+          },
+          {
+            "$id": "n:6",
+            "labels": [
+              {
+                "$ref": "#nl:6"
+              }
+            ]
+          },
+          {
+            "$id": "n:7",
+            "labels": [
+              {
+                "$ref": "#nl:7"
+              }
+            ]
+          },
+          {
+            "$id": "n:11",
+            "labels": [
+              {
+                "$ref": "#nl:11"
+              }
+            ]
+          },
+          {
+            "$id": "n:12",
+            "labels": [
+              {
+                "$ref": "#nl:12"
+              }
+            ]
+          },
+          {
+            "$id": "n:13",
+            "labels": [
+              {
+                "$ref": "#nl:13"
+              }
+            ]
+          },
+          {
+            "$id": "n:14",
+            "labels": [
+              {
+                "$ref": "#nl:14"
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:1",
+            "type": {
+              "$ref": "#rt:1"
+            },
+            "from": {
+              "$ref": "#n:11"
+            },
+            "to": {
+              "$ref": "#n:5"
+            }
+          },
+          {
+            "$id": "r:2",
+            "type": {
+              "$ref": "#rt:2"
+            },
+            "from": {
+              "$ref": "#n:6"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          },
+          {
+            "$id": "r:3",
+            "type": {
+              "$ref": "#rt:3"
+            },
+            "from": {
+              "$ref": "#n:13"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          },
+          {
+            "$id": "r:4",
+            "type": {
+              "$ref": "#rt:4"
+            },
+            "from": {
+              "$ref": "#n:3"
+            },
+            "to": {
+              "$ref": "#n:4"
+            }
+          },
+          {
+            "$id": "r:5",
+            "type": {
+              "$ref": "#rt:5"
+            },
+            "from": {
+              "$ref": "#n:3"
+            },
+            "to": {
+              "$ref": "#n:4"
+            }
+          },
+          {
+            "$id": "r:6",
+            "type": {
+              "$ref": "#rt:6"
+            },
+            "from": {
+              "$ref": "#n:2"
+            },
+            "to": {
+              "$ref": "#n:11"
+            }
+          },
+          {
+            "$id": "r:7",
+            "type": {
+              "$ref": "#rt:7"
+            },
+            "from": {
+              "$ref": "#n:4"
+            },
+            "to": {
+              "$ref": "#n:4"
+            }
+          },
+          {
+            "$id": "r:8",
+            "type": {
+              "$ref": "#rt:8"
+            },
+            "from": {
+              "$ref": "#n:4"
+            },
+            "to": {
+              "$ref": "#n:4"
+            }
+          },
+          {
+            "$id": "r:9",
+            "type": {
+              "$ref": "#rt:9"
+            },
+            "from": {
+              "$ref": "#n:4"
+            },
+            "to": {
+              "$ref": "#n:4"
+            }
+          },
+          {
+            "$id": "r:10",
+            "type": {
+              "$ref": "#rt:10"
+            },
+            "from": {
+              "$ref": "#n:14"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          },
+          {
+            "$id": "r:11",
+            "type": {
+              "$ref": "#rt:11"
+            },
+            "from": {
+              "$ref": "#n:6"
+            },
+            "to": {
+              "$ref": "#n:2"
+            }
+          },
+          {
+            "$id": "r:12",
+            "type": {
+              "$ref": "#rt:12"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:14"
+            }
+          },
+          {
+            "$id": "r:13",
+            "type": {
+              "$ref": "#rt:13"
+            },
+            "from": {
+              "$ref": "#n:6"
+            },
+            "to": {
+              "$ref": "#n:6"
+            }
+          },
+          {
+            "$id": "r:14",
+            "type": {
+              "$ref": "#rt:14"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          },
+          {
+            "$id": "r:15",
+            "type": {
+              "$ref": "#rt:15"
+            },
+            "from": {
+              "$ref": "#n:6"
+            },
+            "to": {
+              "$ref": "#n:7"
+            }
+          },
+          {
+            "$id": "r:16",
+            "type": {
+              "$ref": "#rt:16"
+            },
+            "from": {
+              "$ref": "#n:6"
+            },
+            "to": {
+              "$ref": "#n:12"
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:1",
+            "name": "accountID_Account_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "c:2",
+            "name": "addressID_Address_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:8"
+              }
+            ]
+          },
+          {
+            "$id": "c:3",
+            "name": "alertId_Alert_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:13"
+              }
+            ]
+          },
+          {
+            "$id": "c:4",
+            "name": "alertId_AlertStatus_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:14"
+              }
+            ]
+          },
+          {
+            "$id": "c:5",
+            "name": "countryId_Country_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:5"
+            },
+            "properties": [
+              {
+                "$ref": "#p:17"
+              }
+            ]
+          },
+          {
+            "$id": "c:6",
+            "name": "customerID_Customer_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:6"
+            },
+            "properties": [
+              {
+                "$ref": "#p:31"
+              }
+            ]
+          },
+          {
+            "$id": "c:7",
+            "name": "emailID_Email_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:7"
+            },
+            "properties": [
+              {
+                "$ref": "#p:38"
+              }
+            ]
+          },
+          {
+            "$id": "c:11",
+            "name": "jurisdictionID_Jurisdiction_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:11"
+            },
+            "properties": [
+              {
+                "$ref": "#p:60"
+              }
+            ]
+          },
+          {
+            "$id": "c:12",
+            "name": "phoneNumberID_PhoneNumber_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:12"
+            },
+            "properties": [
+              {
+                "$ref": "#p:64"
+              }
+            ]
+          },
+          {
+            "$id": "c:13",
+            "name": "name_Scenario_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:13"
+            },
+            "properties": [
+              {
+                "$ref": "#p:70"
+              }
+            ]
+          },
+          {
+            "$id": "c:14",
+            "name": "transactionID_Transaction_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:14"
+            },
+            "properties": [
+              {
+                "$ref": "#p:74"
+              }
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "$id": "i:1",
+            "name": "accountID_Account_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "i:2",
+            "name": "addressID_Address_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:8"
+              }
+            ]
+          },
+          {
+            "$id": "i:3",
+            "name": "alertId_Alert_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:13"
+              }
+            ]
+          },
+          {
+            "$id": "i:4",
+            "name": "alertId_AlertStatus_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:14"
+              }
+            ]
+          },
+          {
+            "$id": "i:5",
+            "name": "countryId_Country_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:5"
+            },
+            "properties": [
+              {
+                "$ref": "#p:17"
+              }
+            ]
+          },
+          {
+            "$id": "i:6",
+            "name": "customerID_Customer_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:6"
+            },
+            "properties": [
+              {
+                "$ref": "#p:31"
+              }
+            ]
+          },
+          {
+            "$id": "i:7",
+            "name": "emailID_Email_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:7"
+            },
+            "properties": [
+              {
+                "$ref": "#p:38"
+              }
+            ]
+          },
+          {
+            "$id": "i:11",
+            "name": "jurisdictionID_Jurisdiction_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:11"
+            },
+            "properties": [
+              {
+                "$ref": "#p:60"
+              }
+            ]
+          },
+          {
+            "$id": "i:12",
+            "name": "phoneNumberID_PhoneNumber_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:12"
+            },
+            "properties": [
+              {
+                "$ref": "#p:64"
+              }
+            ]
+          },
+          {
+            "$id": "i:13",
+            "name": "name_Scenario_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:13"
+            },
+            "properties": [
+              {
+                "$ref": "#p:70"
+              }
+            ]
+          },
+          {
+            "$id": "i:14",
+            "name": "transactionID_Transaction_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:14"
+            },
+            "properties": [
+              {
+                "$ref": "#p:74"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "keyProperty": {
+            "$ref": "#p:1"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "keyProperty": {
+            "$ref": "#p:8"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "keyProperty": {
+            "$ref": "#p:13"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "keyProperty": {
+            "$ref": "#p:14"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:5"
+          },
+          "keyProperty": {
+            "$ref": "#p:17"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:6"
+          },
+          "keyProperty": {
+            "$ref": "#p:31"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:7"
+          },
+          "keyProperty": {
+            "$ref": "#p:38"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:11"
+          },
+          "keyProperty": {
+            "$ref": "#p:60"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:12"
+          },
+          "keyProperty": {
+            "$ref": "#p:64"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:13"
+          },
+          "keyProperty": {
+            "$ref": "#p:70"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:14"
+          },
+          "keyProperty": {
+            "$ref": "#p:74"
+          }
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local",
+        "tableSchemas": [
+          {
+            "name": "export_transactions_Customer.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "fraudFlag",
+                "sample": "True",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "louvainCommunity",
+                "sample": "48",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "customerID",
+                "sample": "94680c06-79e0-4b75-923b-4cf9f100a91d",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "sample": "Laurie Hoffman",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "dateOfBirth",
+                "sample": "1973-11-15T00:00:00Z",
+                "recommendedType": {
+                  "type": "datetime"
+                }
+              },
+              {
+                "name": "betweenness",
+                "sample": "295.14285714285717",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "pagerank",
+                "sample": "1.2239049769417913",
+                "recommendedType": {
+                  "type": "float"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Address.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "country",
+                "sample": "USA",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "city",
+                "sample": "Rosebank",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "street",
+                "sample": "997 Beacon Street",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "state",
+                "sample": "New York",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "addressID",
+                "sample": "aa5aac22-d9be-441b-ad3e-b1c9e1bf1252",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_PhoneNumber.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "number",
+                "sample": "+1-555-6768",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "phoneNumberID",
+                "sample": "b6e0ced9-a7eb-4fbf-9f94-e8c052720f3e",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Email.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "emailAddress",
+                "sample": "shelleymiller03@yahoo.de",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "emailID",
+                "sample": "561ae43e-b44d-4a17-9804-87d40ec75ce2",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Jurisdiction.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "riskLevel",
+                "sample": "High",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "jurisdictionID",
+                "sample": "8d0412f5-8415-4438-9303-be15055dceae",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "sample": "Ayeyarwady",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Country.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "label_sp",
+                "sample": "Reino Unido",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "is_ilomember",
+                "sample": "Y",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "iso3_code",
+                "sample": "GBR",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "geo_point_2d_lat",
+                "sample": "54.1454903122",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "onu_code",
+                "sample": "826",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "geo_point_2d_lon",
+                "sample": "-2.88594273633",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "iso2_code",
+                "sample": "GB",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "is_receiving_quest",
+                "sample": "Y",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "label_en",
+                "sample": "United Kingdom",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "official_lang_code",
+                "sample": "EN",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "countryId",
+                "sample": "GBR",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "label_fr",
+                "sample": "Royaume-Uni",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "blackList",
+                "sample": "undefined",
+                "recommendedType": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "greyList",
+                "sample": "undefined",
+                "recommendedType": {
+                  "type": "boolean"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_AlertStatus.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "alertId",
+                "sample": "01",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "status",
+                "sample": "01-New",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Scenario.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "listAlertsQuery",
+                "sample": "MATCH (a:Account)-[:SENT]->(t:Transaction)-[:RECEIVED]->(receiver:Account), (a)<-[:HAS_ACCOUNT]-(c:Customer)-[:RESIDES_AT]->(addr:Address)-[:LOCATED_IN]->(j:Jurisdiction) WHERE j.riskLevel = \"High\" RETURN distinct elementId(c) AS value ORDER by value LIMIT 5",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "sample": "High Risk Jurisdiction",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "alertDetailQuery",
+                "sample": "MATCH path1 = (alert:Alert)-[:ON]->(c:Customer), path2 = (a:Account)<-[:HAS_ACCOUNT]-(c)-[:RESIDES_AT]->(addr:Address)-[:LOCATED_IN]->(j:Jurisdiction), path3 = (a)-[:SENT]->(t:Transaction)-[:RECEIVED]->(receiver:Account) WHERE alert.alertId = $alertId RETURN apoc.coll.toSet([path1, path2, path3]) AS result",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "creationDate",
+                "sample": "2025-03-27T20:18:16Z",
+                "recommendedType": {
+                  "type": "datetime"
+                }
+              },
+              {
+                "name": "applicationDate",
+                "sample": "2025-03-28T00:00:00Z",
+                "recommendedType": {
+                  "type": "datetime"
+                }
+              },
+              {
+                "name": "frequency",
+                "sample": "monthly",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Alert.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "alertId",
+                "sample": "High Risk Jurisdiction_4:23eff246-2d44-41f4-8712-7d751e4c1d91:284",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Transaction.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "date",
+                "sample": "2024-12-03T00:00:00Z",
+                "recommendedType": {
+                  "type": "datetime"
+                }
+              },
+              {
+                "name": "amount",
+                "sample": "2882.96",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "type",
+                "sample": "Deposit",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "transactionID",
+                "sample": "699eb1eb-09b9-4525-be71-becdb7c7b0f6",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "status",
+                "sample": "Pending",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Customer_HAS_ACCOUNT_Account.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Customer_RESIDES_AT_Address.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Customer_USES_PHONE_PhoneNumber.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Customer_USES_EMAIL_Email.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Address_LOCATED_IN_Jurisdiction.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Customer_SHARED_IDENTIFIERS_Customer.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "sharedRatio",
+                "sample": "0.2",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "sharedCount",
+                "sample": "1",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Account_TRANSACTED_TO_Account.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "totalAmount",
+                "sample": "3089.81",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "minAmount",
+                "sample": "3089.81",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "averageAmount",
+                "sample": "3089.81",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "transactionCount",
+                "sample": "1",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "maxAmount",
+                "sample": "3089.81",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Jurisdiction_ASSOCIATED_WITH_Country.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_AlertStatus_NEXT_AlertStatus.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_AlertStatus_NEXT_ANALYST_AlertStatus.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_AlertStatus_NEXT_SUPERVISOR_AlertStatus.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Scenario_HAS_ALERT_Alert.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Alert_HAS_STATUS_AlertStatus.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Alert_HAS_PREVIOUS_STATUS_AlertStatus.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "creationDate",
+                "sample": "2025-03-28T11:04:12Z",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "export_transactions_Account_SENT_Transaction.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Transaction_RECEIVED_Account.csv",
+            "expanded": true,
+            "fields": []
+          },
+          {
+            "name": "export_transactions_Account_with_labels.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "accountID",
+                "sample": "bf6a1a26-4c36-45eb-8c8c-b971fd706baa",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "accountType",
+                "sample": "Savings",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "accountNumber",
+                "sample": "5808953690",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "status",
+                "sample": "Closed",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "balance",
+                "sample": "5349",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "louvainCommunity",
+                "sample": "58",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "pagerank",
+                "sample": "0.5283370205178769",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "internalExternal",
+                "sample": "Internal",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "highRiskJurisdiction",
+                "sample": "false",
+                "recommendedType": {
+                  "type": "boolean"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:6"
+          },
+          "tableName": "export_transactions_Customer.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "fraudFlag",
+              "property": {
+                "$ref": "#p:33"
+              }
+            },
+            {
+              "fieldName": "louvainCommunity",
+              "property": {
+                "$ref": "#p:34"
+              }
+            },
+            {
+              "fieldName": "customerID",
+              "property": {
+                "$ref": "#p:31"
+              }
+            },
+            {
+              "fieldName": "name",
+              "property": {
+                "$ref": "#p:35"
+              }
+            },
+            {
+              "fieldName": "dateOfBirth",
+              "property": {
+                "$ref": "#p:32"
+              }
+            },
+            {
+              "fieldName": "betweenness",
+              "property": {
+                "$ref": "#p:30"
+              }
+            },
+            {
+              "fieldName": "pagerank",
+              "property": {
+                "$ref": "#p:36"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "tableName": "export_transactions_Address.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "country",
+              "property": {
+                "$ref": "#p:10"
+              }
+            },
+            {
+              "fieldName": "city",
+              "property": {
+                "$ref": "#p:9"
+              }
+            },
+            {
+              "fieldName": "street",
+              "property": {
+                "$ref": "#p:12"
+              }
+            },
+            {
+              "fieldName": "state",
+              "property": {
+                "$ref": "#p:11"
+              }
+            },
+            {
+              "fieldName": "addressID",
+              "property": {
+                "$ref": "#p:8"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:12"
+          },
+          "tableName": "export_transactions_PhoneNumber.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "number",
+              "property": {
+                "$ref": "#p:63"
+              }
+            },
+            {
+              "fieldName": "phoneNumberID",
+              "property": {
+                "$ref": "#p:64"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:7"
+          },
+          "tableName": "export_transactions_Email.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "emailAddress",
+              "property": {
+                "$ref": "#p:37"
+              }
+            },
+            {
+              "fieldName": "emailID",
+              "property": {
+                "$ref": "#p:38"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:11"
+          },
+          "tableName": "export_transactions_Jurisdiction.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "riskLevel",
+              "property": {
+                "$ref": "#p:62"
+              }
+            },
+            {
+              "fieldName": "jurisdictionID",
+              "property": {
+                "$ref": "#p:60"
+              }
+            },
+            {
+              "fieldName": "name",
+              "property": {
+                "$ref": "#p:61"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:5"
+          },
+          "tableName": "export_transactions_Country.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "label_sp",
+              "property": {
+                "$ref": "#p:27"
+              }
+            },
+            {
+              "fieldName": "is_ilomember",
+              "property": {
+                "$ref": "#p:21"
+              }
+            },
+            {
+              "fieldName": "iso3_code",
+              "property": {
+                "$ref": "#p:24"
+              }
+            },
+            {
+              "fieldName": "geo_point_2d_lat",
+              "property": {
+                "$ref": "#p:18"
+              }
+            },
+            {
+              "fieldName": "onu_code",
+              "property": {
+                "$ref": "#p:29"
+              }
+            },
+            {
+              "fieldName": "geo_point_2d_lon",
+              "property": {
+                "$ref": "#p:19"
+              }
+            },
+            {
+              "fieldName": "iso2_code",
+              "property": {
+                "$ref": "#p:23"
+              }
+            },
+            {
+              "fieldName": "is_receiving_quest",
+              "property": {
+                "$ref": "#p:22"
+              }
+            },
+            {
+              "fieldName": "label_en",
+              "property": {
+                "$ref": "#p:25"
+              }
+            },
+            {
+              "fieldName": "official_lang_code",
+              "property": {
+                "$ref": "#p:28"
+              }
+            },
+            {
+              "fieldName": "countryId",
+              "property": {
+                "$ref": "#p:17"
+              }
+            },
+            {
+              "fieldName": "label_fr",
+              "property": {
+                "$ref": "#p:26"
+              }
+            },
+            {
+              "fieldName": "blackList",
+              "property": {
+                "$ref": "#p:16"
+              }
+            },
+            {
+              "fieldName": "greyList",
+              "property": {
+                "$ref": "#p:20"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "tableName": "export_transactions_AlertStatus.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "alertId",
+              "property": {
+                "$ref": "#p:14"
+              }
+            },
+            {
+              "fieldName": "status",
+              "property": {
+                "$ref": "#p:15"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:13"
+          },
+          "tableName": "export_transactions_Scenario.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "listAlertsQuery",
+              "property": {
+                "$ref": "#p:69"
+              }
+            },
+            {
+              "fieldName": "name",
+              "property": {
+                "$ref": "#p:70"
+              }
+            },
+            {
+              "fieldName": "alertDetailQuery",
+              "property": {
+                "$ref": "#p:65"
+              }
+            },
+            {
+              "fieldName": "creationDate",
+              "property": {
+                "$ref": "#p:67"
+              }
+            },
+            {
+              "fieldName": "applicationDate",
+              "property": {
+                "$ref": "#p:66"
+              }
+            },
+            {
+              "fieldName": "frequency",
+              "property": {
+                "$ref": "#p:68"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "tableName": "export_transactions_Alert.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "alertId",
+              "property": {
+                "$ref": "#p:13"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:14"
+          },
+          "tableName": "export_transactions_Transaction.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "date",
+              "property": {
+                "$ref": "#p:72"
+              }
+            },
+            {
+              "fieldName": "amount",
+              "property": {
+                "$ref": "#p:71"
+              }
+            },
+            {
+              "fieldName": "type",
+              "property": {
+                "$ref": "#p:75"
+              }
+            },
+            {
+              "fieldName": "transactionID",
+              "property": {
+                "$ref": "#p:74"
+              }
+            },
+            {
+              "fieldName": "status",
+              "property": {
+                "$ref": "#p:73"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "tableName": "export_transactions_Account_with_labels.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:1"
+              },
+              "fieldName": "accountID"
+            },
+            {
+              "property": {
+                "$ref": "#p:2"
+              },
+              "fieldName": "accountNumber"
+            },
+            {
+              "property": {
+                "$ref": "#p:3"
+              },
+              "fieldName": "accountType"
+            },
+            {
+              "property": {
+                "$ref": "#p:4"
+              },
+              "fieldName": "balance"
+            },
+            {
+              "property": {
+                "$ref": "#p:5"
+              },
+              "fieldName": "louvainCommunity"
+            },
+            {
+              "property": {
+                "$ref": "#p:6"
+              },
+              "fieldName": "pagerank"
+            },
+            {
+              "property": {
+                "$ref": "#p:7"
+              },
+              "fieldName": "status"
+            },
+            {
+              "property": {
+                "$ref": "#p:40"
+              },
+              "fieldName": "internalExternal"
+            },
+            {
+              "property": {
+                "$ref": "#p:41"
+              },
+              "fieldName": "highRiskJurisdiction"
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:2"
+          },
+          "tableName": "export_transactions_Customer_HAS_ACCOUNT_Account.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Customer_customerID"
+          },
+          "toMapping": {
+            "fieldName": "end_Account_accountID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:11"
+          },
+          "tableName": "export_transactions_Customer_RESIDES_AT_Address.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Customer_customerID"
+          },
+          "toMapping": {
+            "fieldName": "end_Address_addressID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:16"
+          },
+          "tableName": "export_transactions_Customer_USES_PHONE_PhoneNumber.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Customer_customerID"
+          },
+          "toMapping": {
+            "fieldName": "end_PhoneNumber_phoneNumberID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:15"
+          },
+          "tableName": "export_transactions_Customer_USES_EMAIL_Email.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Customer_customerID"
+          },
+          "toMapping": {
+            "fieldName": "end_Email_emailID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:6"
+          },
+          "tableName": "export_transactions_Address_LOCATED_IN_Jurisdiction.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Address_addressID"
+          },
+          "toMapping": {
+            "fieldName": "end_Jurisdiction_jurisdictionID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:13"
+          },
+          "tableName": "export_transactions_Customer_SHARED_IDENTIFIERS_Customer.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "sharedRatio",
+              "property": {
+                "$ref": "#p:78"
+              }
+            },
+            {
+              "fieldName": "sharedCount",
+              "property": {
+                "$ref": "#p:77"
+              }
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "start_Customer_customerID"
+          },
+          "toMapping": {
+            "fieldName": "end_Customer_customerID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:14"
+          },
+          "tableName": "export_transactions_Account_TRANSACTED_TO_Account.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "totalAmount",
+              "property": {
+                "$ref": "#p:82"
+              }
+            },
+            {
+              "fieldName": "minAmount",
+              "property": {
+                "$ref": "#p:81"
+              }
+            },
+            {
+              "fieldName": "averageAmount",
+              "property": {
+                "$ref": "#p:79"
+              }
+            },
+            {
+              "fieldName": "transactionCount",
+              "property": {
+                "$ref": "#p:83"
+              }
+            },
+            {
+              "fieldName": "maxAmount",
+              "property": {
+                "$ref": "#p:80"
+              }
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "start_Account_accountID"
+          },
+          "toMapping": {
+            "fieldName": "end_Account_accountID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:1"
+          },
+          "tableName": "export_transactions_Jurisdiction_ASSOCIATED_WITH_Country.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Jurisdiction_jurisdictionID"
+          },
+          "toMapping": {
+            "fieldName": "end_Country_countryId"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:7"
+          },
+          "tableName": "export_transactions_AlertStatus_NEXT_AlertStatus.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_AlertStatus_alertId"
+          },
+          "toMapping": {
+            "fieldName": "end_AlertStatus_alertId"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:8"
+          },
+          "tableName": "export_transactions_AlertStatus_NEXT_ANALYST_AlertStatus.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_AlertStatus_alertId"
+          },
+          "toMapping": {
+            "fieldName": "end_AlertStatus_alertId"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:9"
+          },
+          "tableName": "export_transactions_AlertStatus_NEXT_SUPERVISOR_AlertStatus.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_AlertStatus_alertId"
+          },
+          "toMapping": {
+            "fieldName": "end_AlertStatus_alertId"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:3"
+          },
+          "tableName": "export_transactions_Scenario_HAS_ALERT_Alert.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Scenario_name"
+          },
+          "toMapping": {
+            "fieldName": "end_Alert_alertId"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:5"
+          },
+          "tableName": "export_transactions_Alert_HAS_STATUS_AlertStatus.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Alert_alertId"
+          },
+          "toMapping": {
+            "fieldName": "end_AlertStatus_alertId"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:4"
+          },
+          "tableName": "export_transactions_Alert_HAS_PREVIOUS_STATUS_AlertStatus.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "creationDate",
+              "property": {
+                "$ref": "#p:76"
+              }
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "start_Alert_alertId"
+          },
+          "toMapping": {
+            "fieldName": "end_AlertStatus_alertId"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:12"
+          },
+          "tableName": "export_transactions_Account_SENT_Transaction.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Account_accountID"
+          },
+          "toMapping": {
+            "fieldName": "end_Transaction_transactionID"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:10"
+          },
+          "tableName": "export_transactions_Transaction_RECEIVED_Account.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "start_Transaction_transactionID"
+          },
+          "toMapping": {
+            "fieldName": "end_Account_accountID"
+          }
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}

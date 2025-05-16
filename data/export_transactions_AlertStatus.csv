@@ -1,0 +1,7 @@
+alertId,status
+01,01-New
+02,02-Validated
+03,03-ConfirmedValidated
+04,04-Recycled
+05,05-Rejected
+06,06-ConfirmedRejected
