@@ -7,9 +7,9 @@
     "fullscreenEnabled": false,
     "parameters": {
       "neodash_customer": "Christiansen Rippin",
-      "neodash_account": "1614533973",
-      "neodash_shareditem": "4:80f1fa55-bce3-47f7-b705-90cdaf396483:356",
-      "neodash_hrj": "0458319962"
+      "neodash_account": "6169799592",
+      "neodash_shareditem": "4:0ec14763-8f3e-406e-ae2e-db734ea09a77:399",
+      "neodash_hrj": "3190526129"
     },
     "theme": "light"
   },
@@ -98,8 +98,8 @@
       "reports": [
         {
           "id": "56677d4e-8108-4f72-81e6-13425f631cb5",
-          "title": "",
-          "query": "MATCH (c1:Customer)-[r1:USES_PHONE|USES_EMAIL|RESIDES_AT]->(item:PhoneNumber|Email|Address)<-[r2:USES_PHONE|USES_EMAIL|RESIDES_AT]-(c2:Customer)\nWHERE elementId(c1) < elementId(c2)\nWITH item, count(distinct [c1, c2]) AS nbSharedIdentifierRelationships\nRETURN elementId(item) AS itemId, case labels(item)[0]\nwhen \"Address\" then item.street \nwhen \"PhoneNumber\" then item.number\nwhen \"Email\" then item.emailAddress\nelse \"u\" end as identity, labels(item)[0] AS itemType, nbSharedIdentifierRelationships\nORDER BY nbSharedIdentifierRelationships DESC LIMIT 10\n\n\n",
+          "title": "Customers Sharing PII",
+          "query": "MATCH (c1:Customer)-[r1:USES_PHONE|USES_EMAIL|RESIDES_AT]->(item:PhoneNumber|Email|Address)<-[r2:USES_PHONE|USES_EMAIL|RESIDES_AT]-(c2:Customer)\nWHERE elementId(c1) < elementId(c2)\nWITH item, count(distinct c1)+1 AS nbSharedIdentifierRelationships\nRETURN elementId(item) AS itemId, case labels(item)[0]\nwhen \"Address\" then item.street \nwhen \"PhoneNumber\" then item.number\nwhen \"Email\" then item.emailAddress\nelse \"u\" end as identity, labels(item)[0] AS itemType, nbSharedIdentifierRelationships\nORDER BY nbSharedIdentifierRelationships DESC LIMIT 10\n\n\n",
           "width": 15,
           "height": 4,
           "x": 0,
@@ -120,7 +120,7 @@
         },
         {
           "id": "a266b4b5-ee62-4e4d-b44c-78f0ffce10af",
-          "title": "",
+          "title": "Shared PII Detail",
           "query": "match (i)<-[r2:USES_PHONE|USES_EMAIL|RESIDES_AT]-(c2:Customer) \nwhere elementId(i) = $neodash_shareditem\nreturn i, r2, c2\n\n\n",
           "width": 15,
           "height": 5,
@@ -128,8 +128,8 @@
           "y": 5,
           "type": "graph",
           "selection": {
-            "Email": "(label)",
-            "USES_EMAIL": "(label)",
+            "PhoneNumber": "(label)",
+            "USES_PHONE": "(label)",
             "Customer": "name"
           },
           "settings": {
@@ -137,12 +137,12 @@
           },
           "schema": [
             [
-              "Email",
-              "emailAddress",
-              "emailID"
+              "PhoneNumber",
+              "number",
+              "phoneNumberID"
             ],
             [
-              "USES_EMAIL"
+              "USES_PHONE"
             ],
             [
               "Customer",
@@ -164,7 +164,7 @@
         {
           "id": "ce8cb94d-d8d2-490f-9c53-82645f0f4625",
           "title": "High Risk Accounts",
-          "query": "MATCH (l:Account)-[:SENT]->(last_t:Transaction)-[:RECEIVED]->(hrj:HighRiskJurisdiction)\nWHERE last_t.date >= datetime()-duration({days: 270})\nWITH l, hrj, SUM(last_t.amount) AS total_hrj_transctions\nMATCH path=(first)((a1)-[:SENT]->(t)-[:RECEIVED]->(a2)\nWHERE COLLECT {\n       WITH a1, a2\n       MATCH (a1)-[:SENT]->(some_t)-[:RECEIVED]->(a2)\n       WHERE some_t.date >= datetime()-duration({days: 270})\n       WITH SUM(some_t.amount) AS s\n       RETURN 0.9 * total_hrj_transctions <= s <= 1.1 * total_hrj_transctions\n   } = [TRUE]\n)*(l)-[:SENT]->(tx:Transaction)-[:RECEIVED]->(hrj)\n   WHERE NOT EXISTS {\n       WITH first\n       MATCH (before)-[:SENT]->(tx)-[:RECEIVED]->(first)\n       WHERE tx.date >= datetime()-duration({days: 270})\n       WITH SUM(tx.amount) AS sx, before\n       WHERE 0.9 * total_hrj_transctions <= sx <= 1.1 * total_hrj_transctions\n       RETURN before\n   } AND\n   tx.date >= datetime()-duration({days: 270})\nRETURN distinct hrj.accountNumber as accountNumber",
+          "query": "WITH datetime('2024-08-22') as dt\nMATCH (l:Account)-[:SENT]->(last_t:Transaction)-[:RECEIVED]->(hrj:HighRiskJurisdiction)\nWHERE last_t.date >= dt\nWITH l, hrj, SUM(last_t.amount) AS total_hrj_transctions, dt\nMATCH path=(first)((a1)-[:SENT]->(t)-[:RECEIVED]->(a2)\nWHERE COLLECT {\n       WITH a1, a2\n       MATCH (a1)-[:SENT]->(some_t)-[:RECEIVED]->(a2)\n       WHERE some_t.date >= dt\n       WITH SUM(some_t.amount) AS s\n       RETURN 0.9 * total_hrj_transctions <= s <= 1.1 * total_hrj_transctions\n   } = [TRUE]\n)*(l)-[:SENT]->(tx:Transaction)-[:RECEIVED]->(hrj)\n   WHERE NOT EXISTS {\n       WITH first\n       MATCH (before)-[:SENT]->(tx)-[:RECEIVED]->(first)\n       WHERE tx.date >= dt\n       WITH SUM(tx.amount) AS sx, before\n       WHERE 0.9 * total_hrj_transctions <= sx <= 1.1 * total_hrj_transctions\n       RETURN before\n   } AND\n   tx.date >= dt\nRETURN l.accountNumber",
           "width": 8,
           "height": 4,
           "x": 0,
@@ -175,7 +175,7 @@
             "actionsRules": [
               {
                 "condition": "Click",
-                "field": "accountNumber",
+                "field": "l.accountNumber",
                 "value": "accountNumber",
                 "customization": "set variable",
                 "customizationValue": "hrj"
@@ -186,8 +186,8 @@
         },
         {
           "id": "b6816e6b-1c6b-45c1-b56d-f89f10a52b6d",
-          "title": "",
-          "query": "MATCH (l:Account)-[:SENT]->(last_t:Transaction)-[:RECEIVED]->(hrj:HighRiskJurisdiction {accountNumber: $neodash_hrj})\nWHERE last_t.date >= datetime()-duration({days: 270})\nWITH l, hrj, SUM(last_t.amount) AS total_hrj_transctions\nMATCH path=(first)((a1)-[:SENT]->(t)-[:RECEIVED]->(a2)\nWHERE COLLECT {\n       WITH a1, a2\n       MATCH (a1)-[:SENT]->(some_t)-[:RECEIVED]->(a2)\n       WHERE some_t.date >= datetime()-duration({days: 270})\n       WITH SUM(some_t.amount) AS s\n       RETURN 0.9 * total_hrj_transctions <= s <= 1.1 * total_hrj_transctions\n   } = [TRUE]\n)*(l)-[:SENT]->(tx:Transaction)-[:RECEIVED]->(hrj)\n   WHERE NOT EXISTS {\n       WITH first\n       MATCH (before)-[:SENT]->(tx)-[:RECEIVED]->(first)\n       WHERE tx.date >= datetime()-duration({days: 270})\n       WITH SUM(tx.amount) AS sx, before\n       WHERE 0.9 * total_hrj_transctions <= sx <= 1.1 * total_hrj_transctions\n       RETURN before\n   } AND\n   tx.date >= datetime()-duration({days: 270})\nRETURN path\n\n\n",
+          "title": "Transaction Details",
+          "query": "WITH datetime('2024-08-22') as dt \nMATCH (l:Account {accountNumber: $neodash_hrj})-[:SENT]->(last_t:Transaction)-[:RECEIVED]->(hrj:HighRiskJurisdiction)\nWHERE last_t.date >= datetime()-duration({days: 270})\nWITH l, hrj, SUM(last_t.amount) AS total_hrj_transctions\nMATCH path=(first)((a1)-[:SENT]->(t)-[:RECEIVED]->(a2)\nWHERE COLLECT {\n       WITH a1, a2\n       MATCH (a1)-[:SENT]->(some_t)-[:RECEIVED]->(a2)\n       WHERE some_t.date >= datetime()-duration({days: 270})\n       WITH SUM(some_t.amount) AS s\n       RETURN 0.9 * total_hrj_transctions <= s <= 1.1 * total_hrj_transctions\n   } = [TRUE]\n)*(l)-[:SENT]->(tx:Transaction)-[:RECEIVED]->(hrj)\n   WHERE NOT EXISTS {\n       WITH first\n       MATCH (before)-[:SENT]->(tx)-[:RECEIVED]->(first)\n       WHERE tx.date >= datetime()-duration({days: 270})\n       WITH SUM(tx.amount) AS sx, before\n       WHERE 0.9 * total_hrj_transctions <= sx <= 1.1 * total_hrj_transctions\n       RETURN before\n   } AND\n   tx.date >= datetime()-duration({days: 270})\nRETURN path\n",
           "width": 15,
           "height": 9,
           "x": 0,
@@ -235,22 +235,18 @@
             [
               "HighRiskJurisdiction",
               "accountID",
-              "balance",
               "louvainCommunity",
               "accountType",
               "pagerank",
-              "accountNumber",
-              "status"
+              "accountNumber"
             ],
             [
               "External",
               "accountID",
-              "balance",
               "louvainCommunity",
               "accountType",
               "pagerank",
-              "accountNumber",
-              "status"
+              "accountNumber"
             ]
           ]
         }
